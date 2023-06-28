@@ -1,4 +1,4 @@
-vowels = set('AEIOU')
+vowels = set('aeiouAEIOU')
 
 def minion_game(string):
     consonant_score = 0 # stuart
@@ -7,13 +7,10 @@ def minion_game(string):
     for i in enumerate(string):
         # how many different substrings start from the same location = have the same first letter
         num_of_different_substrings = len(string) - i[0]
-        print(num_of_different_substrings)
-        
         if string[i[0]] in vowels:
             vowel_score += num_of_different_substrings
         else:
-            consonant_score += num_of_different_substrings
-                
+            consonant_score += num_of_different_substrings 
     if consonant_score > vowel_score:
         print(f'Stuart {consonant_score}')
     elif vowel_score > consonant_score:
