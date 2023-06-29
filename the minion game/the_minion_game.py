@@ -10,7 +10,7 @@ def minion_game(string):
         if string[i[0]] in vowels:
             vowel_score += num_of_different_substrings
         else:
-            consonant_score += num_of_different_substrings 
+            consonant_score += num_of_different_substrings
     if consonant_score > vowel_score:
         print(f'Stuart {consonant_score}')
     elif vowel_score > consonant_score:
