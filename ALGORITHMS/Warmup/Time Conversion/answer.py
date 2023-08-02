@@ -15,7 +15,6 @@ import sys
 #
 
 def timeConversion(s):
-    print(s)
     t = datetime.strptime(s, '%I:%M:%S%p')
     # Format the datetime object into a 24-hour time string
     print(t.strftime('%H:%M:%S'))
