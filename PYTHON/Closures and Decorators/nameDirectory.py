@@ -2,12 +2,21 @@ import operator
 
 def person_lister(f):
     def inner(people):
-        for i in people:
-            i[2] = int(i[2])
-        sorted_list = sorted(people, key=operator.itemgetter(2))
-        print(list(map(lambda x: f(x), sorted_list)))
-        return list(map(lambda x: f(x), sorted_list))
+
+        from operator import itemgetter
+
+        from itertools import groupby
         
+
+        people.sort(key=operator.itemgetter(2, -1))
+
+        y = groupby(people, itemgetter(2))
+
+        # print(y)
+        # for items in people:
+        #     print(items)
+        
+        return (f(i) for i in people)
     return inner
 
 @person_lister
